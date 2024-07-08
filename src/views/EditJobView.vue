@@ -48,12 +48,10 @@ const handleSubmit = async () => {
 
     try {
         const response = await axios.put(`/api/jobs/${jobId}`, updatedJob);
-        // @todo - show toast for success
         toast.success("Job Updated Successfully");
         router.push(`/jobs/${response.data.id}`);
     } catch (error) {
         console.error("Error Fetching Jobs", error);
-        // @todo - show toast for error
         toast.error("Job Was Not Updated");
     }
 }
